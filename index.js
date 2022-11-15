@@ -20,6 +20,9 @@ function render(){
 
     data.append(download);
 
+    const map = document.getElementById('map');
+    map.src= `//maps.google.com/maps?q=${vendor.data.latitude},${vendor.data.longitude}&z=15&output=embed`
+
     const name = document.createElement('h1');
     name.innerHTML = vendor.data.name;
     const adress = document.createElement('p');
@@ -44,9 +47,9 @@ function render(){
 
     const categories = Object.getOwnPropertyNames(vendor.data);
 
+    const specialDays = document.createElement('div');
+    specialDays.id = 'special-day';
     for(const day of vendor.data.special_days){
-        const div = document.createElement('div');
-        div.id = 'special-day';
         const card = document.createElement('div');
         card.className = 'card';
         const type = document.createElement('p');
@@ -59,9 +62,9 @@ function render(){
         card.append(type);
         card.append(start);
         card.append(end);
-        div.append(card);
-        data.append(div);
+        specialDays.append(card);
     }
+    data.append(specialDays);
 
     for(const category of vendor.data.menus[0].menu_categories){
         const div = document.createElement('div');
