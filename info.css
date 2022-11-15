@@ -1,0 +1,25 @@
+#data{
+    display: flex;
+    flex-direction: column;
+}
+
+th{
+    padding: 20px;
+}
+
+.card{
+    width: 200px;
+    background-color: lightgray;
+    box-shadow: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card img {
+    width: 100px;
+}
+
+#special-day{
+    display: flex;
+    flex-direction: column;
+}
